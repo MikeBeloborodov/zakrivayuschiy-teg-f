@@ -27,16 +27,18 @@ $gradient-smeared-theme-dark-2: #004306;
 // gradients light
 $gradient-left-to-right-theme-light: repeating-linear-gradient(
   to right,
-  $gradient-line-theme-light-1,
+  $gradient-line-theme-light-2 0,
+  $gradient-line-theme-light-1 1px,
   $gradient-line-theme-light-1 2px,
-  $gradient-line-theme-light-2 2px,
+  $gradient-line-theme-light-2 3px,
   $gradient-line-theme-light-2 4px
 );
 $gradient-top-to-bottom-theme-light: repeating-linear-gradient(
   to bottom,
-  $gradient-line-theme-light-1,
+  $gradient-line-theme-light-2 0,
+  $gradient-line-theme-light-1 1px,
   $gradient-line-theme-light-1 2px,
-  $gradient-line-theme-light-2 2px,
+  $gradient-line-theme-light-2 3px,
   $gradient-line-theme-light-2 4px
 );
 $gradient-background-theme-light: linear-gradient(
@@ -48,16 +50,18 @@ $gradient-background-theme-light: linear-gradient(
 // gradients dark
 $gradient-left-to-right-theme-dark: repeating-linear-gradient(
   to right,
-  $gradient-line-theme-dark-1,
+  $gradient-line-theme-dark-2 0,
+  $gradient-line-theme-dark-1 1px,
   $gradient-line-theme-dark-1 2px,
-  $gradient-line-theme-dark-2 2px,
+  $gradient-line-theme-dark-2 3px,
   $gradient-line-theme-dark-2 4px
 );
 $gradient-top-to-bottom-theme-dark: repeating-linear-gradient(
   to bottom,
-  $gradient-line-theme-dark-1,
+  $gradient-line-theme-dark-2 0,
+  $gradient-line-theme-dark-1 1px,
   $gradient-line-theme-dark-1 2px,
-  $gradient-line-theme-dark-2 2px,
+  $gradient-line-theme-dark-2 3px,
   $gradient-line-theme-dark-2 4px
 );
 $gradient-background-theme-dark: linear-gradient(
