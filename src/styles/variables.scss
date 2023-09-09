@@ -1,10 +1,67 @@
+// fonts
 $main-font: 'Inter-Variable';
 $accent-font: 'PressStart2P';
+
+// weights
 $main-font-theme-light-weight: 400;
 $main-font-theme-dark-weight: 465;
 $main-font-bold-theme-light-weight: 700;
 $main-font-bold-theme-dark-weight: 785;
+
+// main colors
 $theme-light-background: #fff;
 $theme-light-accent: #000;
 $theme-dark-background: #000;
 $theme-dark-accent: #00cc14;
+
+// gradient colors
+$gradient-line-theme-light-1: rgb(211 211 211);
+$gradient-line-theme-light-2: rgb(211 211 211 / 0%);
+$gradient-smeared-theme-light-1: #e7e7e7;
+$gradient-smeared-theme-light-2: #1a1a1a;
+$gradient-line-theme-dark-1: rgb(0 0 0);
+$gradient-line-theme-dark-2: rgb(0 0 0 / 0%);
+$gradient-smeared-theme-dark-1: #007f0c;
+$gradient-smeared-theme-dark-2: #004306;
+
+// gradients light
+$gradient-left-to-right-theme-light: repeating-linear-gradient(
+  to right,
+  $gradient-line-theme-light-1,
+  $gradient-line-theme-light-1 2px,
+  $gradient-line-theme-light-2 2px,
+  $gradient-line-theme-light-2 4px
+);
+$gradient-top-to-bottom-theme-light: repeating-linear-gradient(
+  to bottom,
+  $gradient-line-theme-light-1,
+  $gradient-line-theme-light-1 2px,
+  $gradient-line-theme-light-2 2px,
+  $gradient-line-theme-light-2 4px
+);
+$gradient-background-theme-light: linear-gradient(
+  to bottom,
+  $gradient-smeared-theme-light-1 0.01%,
+  $gradient-smeared-theme-light-2
+);
+
+// gradients dark
+$gradient-left-to-right-theme-dark: repeating-linear-gradient(
+  to right,
+  $gradient-line-theme-dark-1,
+  $gradient-line-theme-dark-1 2px,
+  $gradient-line-theme-dark-2 2px,
+  $gradient-line-theme-dark-2 4px
+);
+$gradient-top-to-bottom-theme-dark: repeating-linear-gradient(
+  to bottom,
+  $gradient-line-theme-dark-1,
+  $gradient-line-theme-dark-1 2px,
+  $gradient-line-theme-dark-2 2px,
+  $gradient-line-theme-dark-2 4px
+);
+$gradient-background-theme-dark: linear-gradient(
+  to bottom,
+  $gradient-smeared-theme-dark-1,
+  $gradient-smeared-theme-dark-2
+);

@@ -9,6 +9,11 @@
 :root.theme-light {
   background-color: $theme-light-background;
   color: $theme-light-accent;
+
+  .page {
+    background-image: $gradient-left-to-right-theme-light,
+      $gradient-top-to-bottom-theme-light, $gradient-background-theme-light;
+  }
 }
 
 :root.theme-dark {
@@ -20,5 +25,7 @@
       'wght' $main-font-theme-dark-weight,
       'wdth' 100,
       'opsz' 0;
+    background-image: $gradient-left-to-right-theme-dark,
+      $gradient-top-to-bottom-theme-dark, $gradient-background-theme-dark;
   }
 }
