@@ -13,8 +13,18 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
+@import 'variables';
+@import 'fonts';
+@import 'themes';
+@import 'globals';
+@import 'animations';
 
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: $main-font, sans-serif;
+  font-variation-settings:
+    'wght' $main-font-theme-light-weight,
+    'wdth' 100,
+    'opsz' 0;
 }
