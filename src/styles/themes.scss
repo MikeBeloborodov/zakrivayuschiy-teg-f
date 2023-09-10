@@ -20,6 +20,10 @@
     background-color: $theme-light-background;
   }
 
+  .theme-menu__button:focus-visible {
+    color: $theme-light-accent-transparent;
+  }
+
   .theme-menu__button::after {
     background-color: $theme-light-accent-transparent;
   }
@@ -34,6 +38,34 @@
 
   .theme-menu__button:disabled::before {
     color: $theme-light-accent-transparent;
+  }
+
+  .card {
+    background-color: $theme-light-background;
+    border: 2px solid $theme-light-accent;
+  }
+
+  .card__header {
+    border: 2px solid $theme-light-accent;
+    font-variation-settings:
+      'wght' $main-font-bold-theme-light-weight,
+      'wdth' 100,
+      'opsz' 0;
+  }
+
+  .card__image {
+    border: 2px solid $theme-light-accent;
+  }
+
+  .card__text-container {
+    border: 2px solid $theme-light-accent;
+  }
+
+  .card__text {
+    font-variation-settings:
+      'wght' $main-font-theme-light-weight,
+      'wdth' 100,
+      'opsz' 0;
   }
 }
 
@@ -55,6 +87,10 @@
     background-color: $theme-dark-background;
   }
 
+  .theme-menu__button:focus-visible {
+    color: $theme-dark-accent-transparent;
+  }
+
   .theme-menu__button::after {
     background-color: $theme-dark-accent-transparent;
   }
@@ -70,6 +106,34 @@
   .theme-menu__button:disabled::before {
     color: $theme-dark-accent-transparent;
   }
+
+  .card {
+    background-color: $theme-dark-background;
+    border: 2px solid $theme-dark-accent;
+  }
+
+  .card__header {
+    border: 2px solid $theme-dark-accent;
+    font-variation-settings:
+      'wght' $main-font-bold-theme-dark-weight,
+      'wdth' 100,
+      'opsz' 0;
+  }
+
+  .card__image {
+    border: 2px solid $theme-dark-accent;
+  }
+
+  .card__text-container {
+    border: 2px solid $theme-dark-accent;
+  }
+
+  .card__text {
+    font-variation-settings:
+      'wght' $main-font-theme-dark-weight,
+      'wdth' 100,
+      'opsz' 0;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -77,15 +141,15 @@
     color: $theme-dark-accent;
     background-color: $theme-dark-background;
     transition:
-      background-color 0.3s,
-      color 0.3s;
-    transition-timing-function: ease;
+      background-color $transform-time,
+      color $transform-time;
+    transition-timing-function: $transition-function;
 
     .page {
       background-image: $gradient-left-to-right-theme-dark,
         $gradient-top-to-bottom-theme-dark, $gradient-background-theme-dark;
-      transition: background-image 0.3s;
-      transition-timing-function: ease;
+      transition: background-image $transform-time;
+      transition-timing-function: $transition-function;
       font-variation-settings:
         'wght' $main-font-theme-dark-weight,
         'wdth' 100,
@@ -95,21 +159,27 @@
     .header {
       border: 2px solid $theme-dark-accent;
       background-color: $theme-dark-background;
-      transition: background-color 0.3s;
-      transition-timing-function: ease;
+      transition: background-color $transform-time;
+      transition-timing-function: $transition-function;
     }
 
     .theme-menu__button {
-      transition: color 0.3s;
-      transition-timing-function: ease;
+      transition: color $transform-time;
+      transition-timing-function: $transition-function;
     }
 
     .theme-menu__button::after {
       background-color: $theme-dark-accent-transparent;
-      transition: transform 0.3s;
-      transition-timing-function: ease;
+      transition:
+        transform $transform-time,
+        color $transform-time;
+      transition-timing-function: $transition-function;
       transform: scaleX(0);
       transform-origin: left;
+    }
+
+    .theme-menu__button:focus-visible {
+      color: $theme-dark-accent-transparent;
     }
 
     .theme-menu__button:focus-visible::after {
@@ -122,12 +192,40 @@
 
     .theme-menu__button:disabled {
       color: $theme-dark-accent-transparent;
-      transition: color 0.3s;
-      transition-timing-function: ease;
+      transition: color $transform-time;
+      transition-timing-function: $transition-function;
     }
 
     .theme-menu__button:disabled::before {
       color: $theme-dark-accent-transparent;
+    }
+
+    .card {
+      background-color: $theme-dark-background;
+      border: 2px solid $theme-dark-accent;
+    }
+
+    .card__header {
+      border: 2px solid $theme-dark-accent;
+      font-variation-settings:
+        'wght' $main-font-bold-theme-dark-weight,
+        'wdth' 100,
+        'opsz' 0;
+    }
+
+    .card__image {
+      border: 2px solid $theme-dark-accent;
+    }
+
+    .card__text-container {
+      border: 2px solid $theme-dark-accent;
+    }
+
+    .card__text {
+      font-variation-settings:
+        'wght' $main-font-theme-dark-weight,
+        'wdth' 100,
+        'opsz' 0;
     }
   }
 }
