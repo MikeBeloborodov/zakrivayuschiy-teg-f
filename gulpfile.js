@@ -64,9 +64,15 @@ function css() {
 */
 
 function images() {
-  return gulp.src('src/images/**/*.{jpg,png,svg,gif,ico,webp,avif}')
+  return gulp.src('src/images/**/*.{jpg,png,gif,ico,webp,avif}')
     .pipe(gulp.dest('dist/images'))
     .pipe(browserSync.reload({ stream: true }));
+}
+
+function svg() {
+  return gulp.src('src/svg/**/*.svg')
+    .pipe(gulp.dest('dist/svg'))
+    .pipe(browserSync.reload({stream: true}));
 }
 
 function scripts() {
@@ -100,6 +106,7 @@ function watchFiles() {
   gulp.watch(['src/**/*.html'], html);
   gulp.watch(['src/styles/**/*.scss'], scss);
   gulp.watch(['src/images/**/*.{jpg,png,svg,gif,ico,webp,avif}'], images);
+  gulp.watch(['src/svg/**/*.svg'], svg);
   gulp.watch(['src/fonts/**/*.{ttf,woff,woff2}'], fonts);
   gulp.watch(['src/videos/**/*.{avi,mp4,webm}'], videos);
   gulp.watch(['src/scripts/**/*.{js}'], scripts);
@@ -114,13 +121,14 @@ function serve() {
 }
 
 // add css if needed
-const build = gulp.series(clean, gulp.parallel(html, scss, images, fonts, videos, scripts));
+const build = gulp.series(clean, gulp.parallel(html, scss, images, svg, fonts, videos, scripts));
 const watchapp = gulp.parallel(build, watchFiles, serve);
 
 exports.html = html;
 // exports.css = css;
 exports.scss = scss;
 exports.images = images;
+exports.svg = svg;
 exports.fonts = fonts;
 exports.videos = videos;
 exports.scripts = scripts;

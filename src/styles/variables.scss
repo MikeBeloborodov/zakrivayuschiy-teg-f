@@ -10,9 +10,11 @@ $main-font-bold-theme-dark-weight: 785;
 
 // main colors
 $theme-light-background: #fff;
-$theme-light-accent: #000;
+$theme-light-accent: rgb(0 0 0);
+$theme-light-accent-transparent: rgb(0 0 0 / 60%);
 $theme-dark-background: #000;
-$theme-dark-accent: #00cc14;
+$theme-dark-accent: rgb(0 204 20);
+$theme-dark-accent-transparent: rgb(0 204 20 / 60%);
 
 // gradient colors
 $gradient-line-theme-light-1: rgb(211 211 211);

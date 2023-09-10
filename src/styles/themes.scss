@@ -7,25 +7,127 @@
 @import 'variables';
 
 :root.theme-light {
-  background-color: $theme-light-background;
   color: $theme-light-accent;
+  background-color: $theme-light-background;
 
   .page {
     background-image: $gradient-left-to-right-theme-light,
       $gradient-top-to-bottom-theme-light, $gradient-background-theme-light;
   }
+
+  .header {
+    border: 2px solid $theme-light-accent;
+    background-color: $theme-light-background;
+  }
+
+  .theme-menu__button::after {
+    background-color: $theme-light-accent-transparent;
+  }
+
+  .theme-menu__button:hover {
+    color: $theme-light-accent-transparent;
+  }
+
+  .theme-menu__button:disabled {
+    color: $theme-light-accent-transparent;
+  }
+
+  .theme-menu__button:disabled::before {
+    color: $theme-light-accent-transparent;
+  }
 }
 
 :root.theme-dark {
-  background-color: $theme-dark-background;
   color: $theme-dark-accent;
+  background-color: $theme-dark-background;
 
   .page {
+    background-image: $gradient-left-to-right-theme-dark,
+      $gradient-top-to-bottom-theme-dark, $gradient-background-theme-dark;
     font-variation-settings:
       'wght' $main-font-theme-dark-weight,
       'wdth' 100,
       'opsz' 0;
-    background-image: $gradient-left-to-right-theme-dark,
-      $gradient-top-to-bottom-theme-dark, $gradient-background-theme-dark;
+  }
+
+  .header {
+    border: 2px solid $theme-dark-accent;
+    background-color: $theme-dark-background;
+  }
+
+  .theme-menu__button::after {
+    background-color: $theme-dark-accent-transparent;
+  }
+
+  .theme-menu__button:hover {
+    color: $theme-dark-accent-transparent;
+  }
+
+  .theme-menu__button:disabled {
+    color: $theme-dark-accent-transparent;
+  }
+
+  .theme-menu__button:disabled::before {
+    color: $theme-dark-accent-transparent;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: $theme-dark-accent;
+    background-color: $theme-dark-background;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+    transition-timing-function: ease;
+
+    .page {
+      background-image: $gradient-left-to-right-theme-dark,
+        $gradient-top-to-bottom-theme-dark, $gradient-background-theme-dark;
+      transition: background-image 0.3s;
+      transition-timing-function: ease;
+      font-variation-settings:
+        'wght' $main-font-theme-dark-weight,
+        'wdth' 100,
+        'opsz' 0;
+    }
+
+    .header {
+      border: 2px solid $theme-dark-accent;
+      background-color: $theme-dark-background;
+      transition: background-color 0.3s;
+      transition-timing-function: ease;
+    }
+
+    .theme-menu__button {
+      transition: color 0.3s;
+      transition-timing-function: ease;
+    }
+
+    .theme-menu__button::after {
+      background-color: $theme-dark-accent-transparent;
+      transition: transform 0.3s;
+      transition-timing-function: ease;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    .theme-menu__button:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .theme-menu__button:hover {
+      color: $theme-dark-accent-transparent;
+    }
+
+    .theme-menu__button:disabled {
+      color: $theme-dark-accent-transparent;
+      transition: color 0.3s;
+      transition-timing-function: ease;
+    }
+
+    .theme-menu__button:disabled::before {
+      color: $theme-dark-accent-transparent;
+    }
   }
 }

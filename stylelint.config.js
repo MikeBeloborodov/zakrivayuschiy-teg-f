@@ -1,6 +1,6 @@
 // for SCSS
 module.exports = {
-    "extends": "stylelint-config-standard-scss"
+    "extends": "stylelint-config-standard-scss",
 } 
 // for CSS
 /*
