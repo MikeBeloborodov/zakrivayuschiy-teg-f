@@ -70,7 +70,14 @@
 
   .card__like-button {
     border: $border-width solid $theme-light-accent;
-    font-family: $accent-font;
+  }
+
+  .footer {
+    background-color: $theme-light-background;
+  }
+
+  .footer__button {
+    border: $border-width solid $theme-light-accent;
   }
 }
 
@@ -142,7 +149,14 @@
 
   .card__like-button {
     border: $border-width solid $theme-dark-accent;
-    font-family: $accent-font;
+  }
+
+  .footer {
+    background-color: $theme-dark-background;
+  }
+
+  .footer__button {
+    border: $border-width solid $theme-dark-accent;
   }
 }
 
@@ -240,7 +254,14 @@
 
     .card__like-button {
       border: $border-width solid $theme-dark-accent;
-      font-family: $accent-font;
+    }
+
+    .footer {
+      background-color: $theme-dark-background;
+    }
+
+    .footer__button {
+      border: $border-width solid $theme-dark-accent;
     }
   }
 }
