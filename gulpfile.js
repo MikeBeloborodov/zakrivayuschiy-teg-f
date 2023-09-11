@@ -84,6 +84,7 @@ function scripts() {
       noSource: true
     }))
     .pipe(gulp.dest('dist/scripts'))
+    .pipe(browserSync.reload({stream: true}))
 }
 
 function fonts() {
