@@ -20,7 +20,7 @@
 @import 'animations';
 
 .page {
-  padding: 102px 0;
+  padding: 100px 0;
   font-family: $main-font, sans-serif;
   background-size: cover;
   min-inline-size: 320px;
@@ -44,7 +44,7 @@
   font-weight: 400;
   font-size: 14px;
   text-transform: uppercase;
-  margin: 0 auto 104px;
+  margin: 0 auto 100px;
 }
 
 // clamp (font-size): min - 14px; max - 23px
@@ -68,7 +68,7 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
-  margin: 0 0 25px;
+  margin: 0 0 25px 18px;
   text-align: left;
 }
 
@@ -118,6 +118,22 @@
   padding: 4px 10px 6px;
 }
 
+.card__image-container {
+  position: relative;
+}
+
+.card__image-text {
+  position: absolute;
+  font-family: $accent-font;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+  mix-blend-mode: hard-light;
+  opacity: 0.6;
+  inset-inline-end: 10px;
+  inset-block-start: 20px;
+}
+
 .card__image {
   width: 100%;
   display: block;
@@ -127,7 +143,7 @@
   padding: 25px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 23px;
 }
 
 .card__text-container {
@@ -144,7 +160,7 @@
 .card__buttons {
   display: flex;
   align-self: flex-end;
-  gap: 12px;
+  gap: 10px;
 }
 
 .card__icon-button {
@@ -159,7 +175,7 @@
 
 .card__like-button {
   background-color: transparent;
-  padding: 9px 17px;
+  padding: 9px 34px;
   font-weight: 400;
   line-height: 90%;
   font-size: 14px;

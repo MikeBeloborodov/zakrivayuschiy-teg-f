@@ -53,6 +53,19 @@
       'opsz' 0;
   }
 
+  .card__image-text {
+    text-shadow:
+      1px 0 0 $theme-light-background,
+      1px 0 0 $theme-light-background,
+      0 1px 0 $theme-light-background,
+      0 1px 0 $theme-light-background,
+      -1px 0 0 $theme-light-background,
+      -1px 0 0 $theme-light-background,
+      0 -1px 0 $theme-light-background,
+      0 -1px 0 $theme-light-background;
+    color: $theme-light-accent;
+  }
+
   .card__image {
     border: $border-width solid $theme-light-accent;
   }
@@ -130,6 +143,19 @@
       'wght' $main-font-bold-theme-dark-weight,
       'wdth' 100,
       'opsz' 0;
+  }
+
+  .card__image-text {
+    text-shadow:
+      1px 0 0 $theme-dark-background,
+      1px 0 0 $theme-dark-background,
+      0 1px 0 $theme-dark-background,
+      0 1px 0 $theme-dark-background,
+      -1px 0 0 $theme-dark-background,
+      -1px 0 0 $theme-dark-background,
+      0 -1px 0 $theme-dark-background,
+      0 -1px 0 $theme-dark-background;
+    color: $theme-dark-accent;
   }
 
   .card__image {
@@ -235,6 +261,19 @@
         'wght' $main-font-bold-theme-dark-weight,
         'wdth' 100,
         'opsz' 0;
+    }
+
+    .card__image-text {
+      text-shadow:
+        1px 0 0 $theme-dark-background,
+        1px 0 0 $theme-dark-background,
+        0 1px 0 $theme-dark-background,
+        0 1px 0 $theme-dark-background,
+        -1px 0 0 $theme-dark-background,
+        -1px 0 0 $theme-dark-background,
+        0 -1px 0 $theme-dark-background,
+        0 -1px 0 $theme-dark-background;
+      color: $theme-dark-accent;
     }
 
     .card__image {
