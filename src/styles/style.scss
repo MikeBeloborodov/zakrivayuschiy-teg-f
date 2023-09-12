@@ -191,7 +191,7 @@
   transition: outline $transform-time;
   transition-timing-function: $transition-function;
   cursor: pointer;
-  inline-size: 38px;
+  inline-size: 43px;
 }
 
 .card__icon-button:focus {
@@ -238,8 +238,8 @@
   font-size: 14px;
   line-height: 90%;
   position: relative;
-  z-index: 2;
   mix-blend-mode: difference;
+  z-index: 2;
 }
 
 .footer {

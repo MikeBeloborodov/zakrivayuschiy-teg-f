@@ -15,6 +15,7 @@ $theme-light-accent-transparent: rgb(0 0 0 / 60%);
 $theme-dark-background: #000;
 $theme-dark-accent: rgb(0 204 20);
 $theme-dark-accent-transparent: rgb(0 204 20 / 60%);
+$sparks-color: #f00;
 
 // gradient colors
 $gradient-line-theme-light-1: rgb(211 211 211);
@@ -78,3 +79,10 @@ $transition-function: ease;
 
 // border
 $border-width: 2px;
+
+// Firefox doesn't see SCSS variables for SVG, have to use CSS variables
+:root {
+  --sparks-opacity: 0;
+  --contour-color: rgb(0 0 0);
+  --sparks-color: rgb(255 0 0 / var(--sparks-opacity));
+}

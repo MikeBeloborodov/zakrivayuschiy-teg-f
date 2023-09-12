@@ -7,6 +7,11 @@
 @import 'variables';
 
 :root.theme-light {
+  // CSS variables for firefox (it doesn't see SCSS variables for SVG)
+  --sparks-opacity: 0;
+  --contour-color: rgb(0 0 0);
+  --sparks-color: rgb(255 0 0 / var(--sparks-opacity));
+
   color: $theme-light-accent;
   background-color: $theme-light-background;
 
@@ -121,6 +126,10 @@
 }
 
 :root.theme-dark {
+  --sparks-opacity: 0;
+  --contour-color: rgb(0 204 20);
+  --sparks-color: rgb(255 0 0 / var(--sparks-opacity));
+
   color: $theme-dark-accent;
   background-color: $theme-dark-background;
 
@@ -240,6 +249,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --sparks-opacity: 0;
+    --contour-color: rgb(0 204 20);
+    --sparks-color: rgb(255 0 0 / var(--sparks-opacity));
+
     color: $theme-dark-accent;
     background-color: $theme-dark-background;
 
