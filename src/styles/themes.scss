@@ -41,8 +41,8 @@
   }
 
   .card {
-    background-color: $theme-light-background;
     border: $border-width solid $theme-light-accent;
+    background-color: $theme-light-background;
   }
 
   .card__header {
@@ -54,6 +54,7 @@
   }
 
   .card__image-text {
+    color: $theme-light-accent;
     text-shadow:
       1px 0 0 $theme-light-background,
       1px 0 0 $theme-light-background,
@@ -63,7 +64,16 @@
       -1px 0 0 $theme-light-background,
       0 -1px 0 $theme-light-background,
       0 -1px 0 $theme-light-background;
-    color: $theme-light-accent;
+  }
+
+  @supports (
+    (text-stroke: 1px $theme-light-background) or
+      (-webkit-text-stroke: 1px $theme-light-background)
+  ) {
+    .card__image-text {
+      -webkit-text-stroke: 1px $theme-light-background;
+      text-shadow: none;
+    }
   }
 
   .card__image {
@@ -81,16 +91,32 @@
       'opsz' 0;
   }
 
-  .card__like-button {
+  .card__icon-button:focus-visible {
+    outline: $border-width solid $theme-light-accent;
+  }
+
+  .standard-button {
     border: $border-width solid $theme-light-accent;
+  }
+
+  .standard-button:focus-visible {
+    box-shadow: 2px 2px 0 2px $theme-light-accent;
+  }
+
+  .standard-button::before {
+    background-color: $theme-light-accent;
+  }
+
+  .button__text {
+    color: $theme-light-background;
   }
 
   .footer {
     background-color: $theme-light-background;
   }
 
-  .footer__button {
-    border: $border-width solid $theme-light-accent;
+  .footer__button-image {
+    color: $theme-light-background;
   }
 }
 
@@ -133,8 +159,8 @@
   }
 
   .card {
-    background-color: $theme-dark-background;
     border: $border-width solid $theme-dark-accent;
+    background-color: $theme-dark-background;
   }
 
   .card__header {
@@ -146,6 +172,7 @@
   }
 
   .card__image-text {
+    color: $theme-dark-accent;
     text-shadow:
       1px 0 0 $theme-dark-background,
       1px 0 0 $theme-dark-background,
@@ -155,7 +182,16 @@
       -1px 0 0 $theme-dark-background,
       0 -1px 0 $theme-dark-background,
       0 -1px 0 $theme-dark-background;
-    color: $theme-dark-accent;
+  }
+
+  @supports (
+    (text-stroke: 1px $theme-dark-background) or
+      (-webkit-text-stroke: 1px $theme-dark-background)
+  ) {
+    .card__image-text {
+      -webkit-text-stroke: 1px $theme-dark-background;
+      text-shadow: none;
+    }
   }
 
   .card__image {
@@ -173,16 +209,32 @@
       'opsz' 0;
   }
 
-  .card__like-button {
+  .card__icon-button:focus-visible {
+    outline: $border-width solid $theme-dark-accent;
+  }
+
+  .standard-button {
     border: $border-width solid $theme-dark-accent;
+  }
+
+  .standard-button:focus-visible {
+    box-shadow: 2px 2px 0 2px $theme-dark-accent;
+  }
+
+  .standard-button::before {
+    background-color: $theme-dark-accent;
+  }
+
+  .button__text {
+    color: $theme-dark-accent;
   }
 
   .footer {
     background-color: $theme-dark-background;
   }
 
-  .footer__button {
-    border: $border-width solid $theme-dark-accent;
+  .footer__button-image {
+    color: $theme-dark-accent;
   }
 }
 
@@ -190,16 +242,10 @@
   :root {
     color: $theme-dark-accent;
     background-color: $theme-dark-background;
-    transition:
-      background-color $transform-time,
-      color $transform-time;
-    transition-timing-function: $transition-function;
 
     .page {
       background-image: $gradient-left-to-right-theme-dark,
         $gradient-top-to-bottom-theme-dark, $gradient-background-theme-dark;
-      transition: background-image $transform-time;
-      transition-timing-function: $transition-function;
       font-variation-settings:
         'wght' $main-font-theme-dark-weight,
         'wdth' 100,
@@ -209,31 +255,14 @@
     .header {
       border: $border-width solid $theme-dark-accent;
       background-color: $theme-dark-background;
-      transition: background-color $transform-time;
-      transition-timing-function: $transition-function;
-    }
-
-    .theme-menu__button {
-      transition: color $transform-time;
-      transition-timing-function: $transition-function;
     }
 
     .theme-menu__button::after {
       background-color: $theme-dark-accent-transparent;
-      transition:
-        transform $transform-time,
-        color $transform-time;
-      transition-timing-function: $transition-function;
-      transform: scaleX(0);
-      transform-origin: left;
     }
 
     .theme-menu__button:focus-visible {
       color: $theme-dark-accent-transparent;
-    }
-
-    .theme-menu__button:focus-visible::after {
-      transform: scaleX(1);
     }
 
     .theme-menu__button:hover {
@@ -242,8 +271,6 @@
 
     .theme-menu__button:disabled {
       color: $theme-dark-accent-transparent;
-      transition: color $transform-time;
-      transition-timing-function: $transition-function;
     }
 
     .theme-menu__button:disabled::before {
@@ -251,8 +278,8 @@
     }
 
     .card {
-      background-color: $theme-dark-background;
       border: $border-width solid $theme-dark-accent;
+      background-color: $theme-dark-background;
     }
 
     .card__header {
@@ -264,6 +291,7 @@
     }
 
     .card__image-text {
+      color: $theme-dark-accent;
       text-shadow:
         1px 0 0 $theme-dark-background,
         1px 0 0 $theme-dark-background,
@@ -273,7 +301,16 @@
         -1px 0 0 $theme-dark-background,
         0 -1px 0 $theme-dark-background,
         0 -1px 0 $theme-dark-background;
-      color: $theme-dark-accent;
+    }
+
+    @supports (
+      (text-stroke: 1px $theme-dark-background) or
+        (-webkit-text-stroke: 1px $theme-dark-background)
+    ) {
+      .card__image-text {
+        -webkit-text-stroke: 1px $theme-dark-background;
+        text-shadow: none;
+      }
     }
 
     .card__image {
@@ -291,8 +328,24 @@
         'opsz' 0;
     }
 
-    .card__like-button {
+    .card__icon-button:focus-visible {
+      outline: $border-width solid $theme-dark-accent;
+    }
+
+    .standard-button {
       border: $border-width solid $theme-dark-accent;
+    }
+
+    .standard-button:focus-visible {
+      box-shadow: 2px 2px 0 2px $theme-dark-accent;
+    }
+
+    .standard-button::before {
+      background-color: $theme-dark-accent;
+    }
+
+    .button__text {
+      color: $theme-dark-accent;
     }
 
     .footer {
@@ -301,6 +354,10 @@
 
     .footer__button {
       border: $border-width solid $theme-dark-accent;
+    }
+
+    .footer__button-image {
+      color: $theme-dark-accent;
     }
   }
 }
