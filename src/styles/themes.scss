@@ -7,11 +7,6 @@
 @import 'variables';
 
 :root.theme-light {
-  // CSS variables for firefox (it doesn't see SCSS variables for SVG)
-  --sparks-opacity: 0;
-  --contour-color: rgb(0 0 0);
-  --sparks-color: rgb(255 0 0 / var(--sparks-opacity));
-
   color: $theme-light-accent;
   background-color: $theme-light-background;
 
@@ -123,13 +118,49 @@
   .footer__button-image {
     color: $theme-light-background;
   }
+
+  .contour {
+    fill: $contour-theme-light;
+  }
+
+  .core {
+    fill: $core-theme-light-transparent;
+  }
+
+  .main-body {
+    fill: $main-body-theme-light-transparent;
+  }
+
+  .sparks {
+    fill: $sparks-fill-color-transparent;
+  }
+
+  .card__icon-button:hover {
+    .like-icon {
+      .core {
+        fill: $core-theme-light;
+      }
+
+      .main-body {
+        fill: $main-body-theme-light;
+      }
+    }
+  }
+
+  .card__icon-button:active {
+    .like-icon {
+      .core {
+        fill: $core-active;
+      }
+
+      .main-body {
+        fill: $main-body-active;
+      }
+    }
+  }
 }
 
 :root.theme-dark {
-  --sparks-opacity: 0;
-  --contour-color: rgb(0 204 20);
-  --sparks-color: rgb(255 0 0 / var(--sparks-opacity));
-
   color: $theme-dark-accent;
   background-color: $theme-dark-background;
 
@@ -245,14 +276,50 @@
   .footer__button-image {
     color: $theme-dark-accent;
   }
+
+  .contour {
+    fill: $contour-theme-dark;
+  }
+
+  .core {
+    fill: $core-theme-dark-transparent;
+  }
+
+  .main-body {
+    fill: $main-body-theme-dark-transparent;
+  }
+
+  .sparks {
+    fill: $sparks-fill-color-transparent;
+  }
+
+  .card__icon-button:hover {
+    .like-icon {
+      .core {
+        fill: $core-theme-dark;
+      }
+
+      .main-body {
+        fill: $main-body-theme-dark;
+      }
+    }
+  }
+
+  .card__icon-button:active {
+    .like-icon {
+      .core {
+        fill: $core-active;
+      }
+
+      .main-body {
+        fill: $main-body-active;
+      }
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --sparks-opacity: 0;
-    --contour-color: rgb(0 204 20);
-    --sparks-color: rgb(255 0 0 / var(--sparks-opacity));
-
     color: $theme-dark-accent;
     background-color: $theme-dark-background;
 
@@ -371,6 +438,46 @@
 
     .footer__button-image {
       color: $theme-dark-accent;
+    }
+
+    .contour {
+      fill: $contour-theme-dark;
+    }
+
+    .core {
+      fill: $core-theme-dark-transparent;
+    }
+
+    .main-body {
+      fill: $main-body-theme-dark-transparent;
+    }
+
+    .sparks {
+      fill: $sparks-fill-color-transparent;
+    }
+
+    .card__icon-button:hover {
+      .like-icon {
+        .core {
+          fill: $core-theme-dark;
+        }
+
+        .main-body {
+          fill: $main-body-theme-dark;
+        }
+      }
+    }
+
+    .card__icon-button:active {
+      .like-icon {
+        .core {
+          fill: $core-active;
+        }
+
+        .main-body {
+          fill: $main-body-active;
+        }
+      }
     }
   }
 }
