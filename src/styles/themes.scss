@@ -1,14 +1,18 @@
-/* В этом файле вы опишете значения переменных в разных цветовых схемах.
-Придерживайтесь такого именования классов:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
-*/
 @import 'variables';
 
 :root.theme-light {
   color: $theme-light-accent;
   background-color: $theme-light-background;
+
+  @supports (
+    (text-stroke: 1px $theme-light-background) or
+      (-webkit-text-stroke: 1px $theme-light-background)
+  ) {
+    .card__image-text {
+      text-shadow: none;
+      -webkit-text-stroke: 1px $theme-light-background;
+    }
+  }
 
   .page {
     background-image: $gradient-left-to-right-theme-light,
@@ -64,16 +68,6 @@
       -1px 0 0 $theme-light-background,
       0 -1px 0 $theme-light-background,
       0 -1px 0 $theme-light-background;
-  }
-
-  @supports (
-    (text-stroke: 1px $theme-light-background) or
-      (-webkit-text-stroke: 1px $theme-light-background)
-  ) {
-    .card__image-text {
-      -webkit-text-stroke: 1px $theme-light-background;
-      text-shadow: none;
-    }
   }
 
   .card__image {
@@ -164,6 +158,16 @@
   color: $theme-dark-accent;
   background-color: $theme-dark-background;
 
+  @supports (
+    (text-stroke: 1px $theme-dark-background) or
+      (-webkit-text-stroke: 1px $theme-dark-background)
+  ) {
+    .card__image-text {
+      text-shadow: none;
+      -webkit-text-stroke: 1px $theme-dark-background;
+    }
+  }
+
   .page {
     background-image: $gradient-left-to-right-theme-dark,
       $gradient-top-to-bottom-theme-dark, $gradient-background-theme-dark;
@@ -222,16 +226,6 @@
       -1px 0 0 $theme-dark-background,
       0 -1px 0 $theme-dark-background,
       0 -1px 0 $theme-dark-background;
-  }
-
-  @supports (
-    (text-stroke: 1px $theme-dark-background) or
-      (-webkit-text-stroke: 1px $theme-dark-background)
-  ) {
-    .card__image-text {
-      -webkit-text-stroke: 1px $theme-dark-background;
-      text-shadow: none;
-    }
   }
 
   .card__image {
@@ -323,6 +317,16 @@
     color: $theme-dark-accent;
     background-color: $theme-dark-background;
 
+    @supports (
+      (text-stroke: 1px $theme-dark-background) or
+        (-webkit-text-stroke: 1px $theme-dark-background)
+    ) {
+      .card__image-text {
+        text-shadow: none;
+        -webkit-text-stroke: 1px $theme-dark-background;
+      }
+    }
+
     .page {
       background-image: $gradient-left-to-right-theme-dark,
         $gradient-top-to-bottom-theme-dark, $gradient-background-theme-dark;
@@ -381,16 +385,6 @@
         -1px 0 0 $theme-dark-background,
         0 -1px 0 $theme-dark-background,
         0 -1px 0 $theme-dark-background;
-    }
-
-    @supports (
-      (text-stroke: 1px $theme-dark-background) or
-        (-webkit-text-stroke: 1px $theme-dark-background)
-    ) {
-      .card__image-text {
-        -webkit-text-stroke: 1px $theme-dark-background;
-        text-shadow: none;
-      }
     }
 
     .card__image {
