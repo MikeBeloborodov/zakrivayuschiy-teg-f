@@ -152,6 +152,16 @@
       }
     }
   }
+
+  .dialog {
+    border: $border-width solid $theme-light-accent;
+    color: $theme-light-accent;
+    background-color: $theme-light-background;
+  }
+
+  .dialog__button {
+    background-color: $theme-light-background;
+  }
 }
 
 :root.theme-dark {
@@ -309,6 +319,16 @@
         fill: $main-body-active;
       }
     }
+  }
+
+  .dialog {
+    border: $border-width solid $theme-dark-accent;
+    color: $theme-dark-accent;
+    background-color: $theme-dark-background;
+  }
+
+  .dialog__button {
+    background-color: $theme-dark-background;
   }
 }
 
@@ -472,6 +492,16 @@
           fill: $main-body-active;
         }
       }
+    }
+
+    .dialog {
+      border: $border-width solid $theme-dark-accent;
+      color: $theme-dark-accent;
+      background-color: $theme-dark-background;
+    }
+
+    .dialog__button {
+      background-color: $theme-dark-background;
     }
   }
 }

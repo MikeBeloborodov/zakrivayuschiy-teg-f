@@ -135,13 +135,31 @@
       </section>
     </main>
     <footer class="footer content-section">
-      <button class="footer__button standard-button">
+      <button
+        class="footer__button standard-button"
+        type="button"
+        onclick="window['dialog'].showModal()"
+        aria-controls="dialog"
+      >
         <svg class="footer__button-image" viewBox="0 0 39 39">
           <use href="svg/floppy.svg#floppy" />
         </svg>
         <span class="button__text">Сохранить на память</span>
       </button>
     </footer>
+    <dialog class="dialog" id="dialog">
+      <svg class="dialog__image" viewBox="0 0 39 39">
+        <use href="svg/floppy.svg#floppy" />
+      </svg>
+      <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
+      <button
+        class="dialog__button standard-button"
+        type="button"
+        onclick="window['dialog'].close()"
+      >
+        <span class="button__text">ок</span>
+      </button>
+    </dialog>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
