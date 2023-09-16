@@ -1,97 +1,63 @@
-// fonts
-$main-font: 'Inter-Variable';
-$accent-font: 'PressStart2P';
+:root {
+  // fonts
+  --main-font: 'Inter-Variable';
+  --accent-font: 'PressStart2P';
 
-// weights
-$main-font-theme-light-weight: 400;
-$main-font-theme-dark-weight: 465;
-$main-font-bold-theme-light-weight: 700;
-$main-font-bold-theme-dark-weight: 785;
+  // weights
+  --main-font-weight: 400;
+  --main-font-bold-weight: 700;
 
-// main colors
-$theme-light-background: #fff;
-$theme-light-accent: rgb(0 0 0);
-$theme-light-accent-transparent: rgb(0 0 0 / 60%);
-$theme-dark-background: #000;
-$theme-dark-accent: rgb(0 204 20);
-$theme-dark-accent-transparent: rgb(0 204 20 / 60%);
+  // main colors
+  --background-clr: #fff;
+  --accent-clr: rgb(0 0 0);
+  --accent-clr-transparent: rgb(0 0 0 / 60%);
+  --btn-text-clr: #fff;
 
-// heart SVG
-$sparks-fill-color: #f00;
-$sparks-fill-color-transparent: rgb(255 0 0 / 0%);
-$contour-theme-light: rgb(0 0 0);
-$contour-theme-dark: rgb(0 204 20);
-$core-theme-light: rgb(0 0 0);
-$core-theme-light-transparent: rgb(0 0 0 / 0%);
-$core-theme-dark: rgb(0 204 20);
-$core-theme-dark-transparent: rgb(0 204 20 / 0%);
-$main-body-theme-light: rgb(0 0 0);
-$main-body-theme-light-transparent: rgb(0 0 0 / 0%);
-$main-body-theme-dark: rgb(0 204 20);
-$main-body-theme-dark-transparent: rgb(0 204 20 / 0%);
-$contour-active: #f00;
-$core-active: #f00;
-$main-body-active: #f00;
+  // heart SVG
+  --sparks-fill-clr: #f00;
+  --sparks-fill-clr-transparent: rgb(255 0 0 / 0%);
+  --contour-clr: rgb(0 0 0);
+  --core-clr: rgb(0 0 0);
+  --core-clr-transparent: rgb(0 0 0 / 0%);
+  --main-body-clr: rgb(0 0 0);
+  --main-body-clr-transparent: rgb(0 0 0 / 0%);
+  --contour-active-clr: #f00;
+  --core-active-clr: #f00;
+  --main-body-active-clr: #f00;
 
-// gradient colors
-$gradient-line-theme-light-1: rgb(211 211 211);
-$gradient-line-theme-light-2: rgb(211 211 211 / 0%);
-$gradient-smeared-theme-light-1: #e7e7e7;
-$gradient-smeared-theme-light-2: #1a1a1a;
-$gradient-line-theme-dark-1: rgb(0 0 0);
-$gradient-line-theme-dark-2: rgb(0 0 0 / 0%);
-$gradient-smeared-theme-dark-1: #007f0c;
-$gradient-smeared-theme-dark-2: #004306;
+  // gradient colors
+  --gradient-line-1: rgb(211 211 211);
+  --gradient-line-2: rgb(211 211 211 / 0%);
+  --gradient-smeared-1: #e7e7e7;
+  --gradient-smeared-2: #1a1a1a;
 
-// gradients light
-$gradient-left-to-right-theme-light: repeating-linear-gradient(
-  to right,
-  $gradient-line-theme-light-2 0,
-  $gradient-line-theme-light-1 1px,
-  $gradient-line-theme-light-1 2px,
-  $gradient-line-theme-light-2 3px,
-  $gradient-line-theme-light-2 4px
-);
-$gradient-top-to-bottom-theme-light: repeating-linear-gradient(
-  to bottom,
-  $gradient-line-theme-light-2 0,
-  $gradient-line-theme-light-1 1px,
-  $gradient-line-theme-light-1 2px,
-  $gradient-line-theme-light-2 3px,
-  $gradient-line-theme-light-2 4px
-);
-$gradient-background-theme-light: linear-gradient(
-  to bottom,
-  $gradient-smeared-theme-light-1 0.01%,
-  $gradient-smeared-theme-light-2
-);
+  // gradients light
+  --gradient-left-to-right: repeating-linear-gradient(
+    to right,
+    var(--gradient-line-2) 0,
+    var(--gradient-line-1) 1px,
+    var(--gradient-line-1) 2px,
+    var(--gradient-line-2) 3px,
+    var(--gradient-line-2) 4px
+  );
+  --gradient-top-to-bottom: repeating-linear-gradient(
+    to bottom,
+    var(--gradient-line-2) 0,
+    var(--gradient-line-1) 1px,
+    var(--gradient-line-1) 2px,
+    var(--gradient-line-2) 3px,
+    var(--gradient-line-2) 4px
+  );
+  --gradient-background: linear-gradient(
+    to bottom,
+    var(--gradient-smeared-1) 0.01%,
+    var(--gradient-smeared-2)
+  );
 
-// gradients dark
-$gradient-left-to-right-theme-dark: repeating-linear-gradient(
-  to right,
-  $gradient-line-theme-dark-2 0,
-  $gradient-line-theme-dark-1 1px,
-  $gradient-line-theme-dark-1 2px,
-  $gradient-line-theme-dark-2 3px,
-  $gradient-line-theme-dark-2 4px
-);
-$gradient-top-to-bottom-theme-dark: repeating-linear-gradient(
-  to bottom,
-  $gradient-line-theme-dark-2 0,
-  $gradient-line-theme-dark-1 1px,
-  $gradient-line-theme-dark-1 2px,
-  $gradient-line-theme-dark-2 3px,
-  $gradient-line-theme-dark-2 4px
-);
-$gradient-background-theme-dark: linear-gradient(
-  to bottom,
-  $gradient-smeared-theme-dark-1,
-  $gradient-smeared-theme-dark-2
-);
+  // transforms
+  --transform-time: 0.3s;
+  --transition-function: ease;
 
-// transforms
-$transform-time: 0.3s;
-$transition-function: ease;
-
-// border
-$border-width: 2px;
+  // border
+  --border-width: 2px;
+}

@@ -12,19 +12,19 @@
 
 @keyframes core-coloring {
   100% {
-    fill: $core-active;
+    fill: var(--core-active-clr);
   }
 }
 
 @keyframes main-body-coloring {
   100% {
-    fill: $main-body-active;
+    fill: var(--main-body-active-clr);
   }
 }
 
 @keyframes contour-coloring {
   100% {
-    fill: $contour-active;
+    fill: var(--contour-active-clr);
   }
 }
 
@@ -37,6 +37,6 @@
 
 @keyframes sparks-coloring {
   100% {
-    fill: $sparks-fill-color;
+    fill: var(--sparks-fill-clr);
   }
 }

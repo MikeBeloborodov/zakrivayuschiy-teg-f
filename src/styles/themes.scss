@@ -1,507 +1,155 @@
 @import 'variables';
 
 :root.theme-light {
-  color: $theme-light-accent;
-  background-color: $theme-light-background;
+  // fonts
+  --main-font: 'Inter-Variable';
+  --accent-font: 'PressStart2P';
 
-  @supports (
-    (text-stroke: 1px $theme-light-background) or
-      (-webkit-text-stroke: 1px $theme-light-background)
-  ) {
-    .card__image-text {
-      text-shadow: none;
-      -webkit-text-stroke: 1px $theme-light-background;
-    }
-  }
+  // weights
+  --main-font-weight: 400;
+  --main-font-bold-weight: 700;
 
-  .page {
-    background-image: $gradient-left-to-right-theme-light,
-      $gradient-top-to-bottom-theme-light, $gradient-background-theme-light;
-  }
+  // main colors
+  --background-clr: #fff;
+  --accent-clr: rgb(0 0 0);
+  --accent-clr-transparent: rgb(0 0 0 / 60%);
+  --btn-text-clr: #fff;
 
-  .header {
-    border: $border-width solid $theme-light-accent;
-    background-color: $theme-light-background;
-  }
+  // heart SVG
+  --sparks-fill-clr: #f00;
+  --sparks-fill-clr-transparent: rgb(255 0 0 / 0%);
+  --contour-clr: rgb(0 0 0);
+  --core-clr: rgb(0 0 0);
+  --core-clr-transparent: rgb(0 0 0 / 0%);
+  --main-body-clr: rgb(0 0 0);
+  --main-body-clr-transparent: rgb(0 0 0 / 0%);
+  --contour-active-clr: #f00;
+  --core-active-clr: #f00;
+  --main-body-active-clr: #f00;
 
-  .theme-menu__button:focus-visible {
-    color: $theme-light-accent-transparent;
-  }
+  // gradient colors
+  --gradient-line-1: rgb(211 211 211);
+  --gradient-line-2: rgb(211 211 211 / 0%);
+  --gradient-smeared-1: #e7e7e7;
+  --gradient-smeared-2: #1a1a1a;
 
-  .theme-menu__button::after {
-    background-color: $theme-light-accent-transparent;
-  }
+  // gradients light
+  --gradient-left-to-right: repeating-linear-gradient(
+    to right,
+    var(--gradient-line-2) 0,
+    var(--gradient-line-1) 1px,
+    var(--gradient-line-1) 2px,
+    var(--gradient-line-2) 3px,
+    var(--gradient-line-2) 4px
+  );
+  --gradient-top-to-bottom: repeating-linear-gradient(
+    to bottom,
+    var(--gradient-line-2) 0,
+    var(--gradient-line-1) 1px,
+    var(--gradient-line-1) 2px,
+    var(--gradient-line-2) 3px,
+    var(--gradient-line-2) 4px
+  );
+  --gradient-background: linear-gradient(
+    to bottom,
+    var(--gradient-smeared-1) 0.01%,
+    var(--gradient-smeared-2)
+  );
 
-  .theme-menu__button:hover {
-    color: $theme-light-accent-transparent;
-  }
+  // transforms
+  --transform-time: 0.3s;
+  --transition-function: ease;
 
-  .theme-menu__button:disabled {
-    color: $theme-light-accent-transparent;
-  }
-
-  .theme-menu__button:disabled::before {
-    color: $theme-light-accent-transparent;
-  }
-
-  .card {
-    border: $border-width solid $theme-light-accent;
-    background-color: $theme-light-background;
-  }
-
-  .card__header {
-    border: $border-width solid $theme-light-accent;
-    font-variation-settings:
-      'wght' $main-font-bold-theme-light-weight,
-      'wdth' 100,
-      'opsz' 0;
-  }
-
-  .card__image-text {
-    color: $theme-light-accent;
-    text-shadow:
-      1px 0 0 $theme-light-background,
-      1px 0 0 $theme-light-background,
-      0 1px 0 $theme-light-background,
-      0 1px 0 $theme-light-background,
-      -1px 0 0 $theme-light-background,
-      -1px 0 0 $theme-light-background,
-      0 -1px 0 $theme-light-background,
-      0 -1px 0 $theme-light-background;
-  }
-
-  .card__image {
-    border: $border-width solid $theme-light-accent;
-  }
-
-  .card__body {
-    border: $border-width solid $theme-light-accent;
-  }
-
-  .card__text {
-    font-variation-settings:
-      'wght' $main-font-theme-light-weight,
-      'wdth' 100,
-      'opsz' 0;
-  }
-
-  .card__icon-button:focus-visible {
-    outline: $border-width solid $theme-light-accent;
-  }
-
-  .standard-button {
-    border: $border-width solid $theme-light-accent;
-  }
-
-  .standard-button:focus-visible {
-    box-shadow: 2px 2px 0 2px $theme-light-accent;
-  }
-
-  .standard-button::before {
-    background-color: $theme-light-accent;
-  }
-
-  .button__text {
-    color: $theme-light-background;
-  }
-
-  .footer {
-    background-color: $theme-light-background;
-  }
-
-  .footer__button-image {
-    color: $theme-light-background;
-  }
-
-  .contour {
-    fill: $contour-theme-light;
-  }
-
-  .core {
-    fill: $core-theme-light-transparent;
-  }
-
-  .main-body {
-    fill: $main-body-theme-light-transparent;
-  }
-
-  .sparks {
-    fill: $sparks-fill-color-transparent;
-  }
-
-  .card__icon-button:hover {
-    .like-icon {
-      .core {
-        fill: $core-theme-light;
-      }
-
-      .main-body {
-        fill: $main-body-theme-light;
-      }
-    }
-  }
-
-  .card__icon-button:active {
-    .like-icon {
-      .core {
-        fill: $core-active;
-      }
-
-      .main-body {
-        fill: $main-body-active;
-      }
-    }
-  }
-
-  .dialog {
-    border: $border-width solid $theme-light-accent;
-    color: $theme-light-accent;
-    background-color: $theme-light-background;
-  }
-
-  .dialog__button {
-    background-color: $theme-light-background;
-  }
+  // border
+  --border-width: 2px;
 }
 
 :root.theme-dark {
-  color: $theme-dark-accent;
-  background-color: $theme-dark-background;
+  --main-font-weight: 465;
+  --main-font-bold-weight: 785;
+  --background-clr: #000;
+  --accent-clr: rgb(0 204 20);
+  --accent-clr-transparent: rgb(0 204 20 / 60%);
+  --btn-text-clr: rgb(0 204 20);
+  --contour-clr: rgb(0 204 20);
+  --core-clr: rgb(0 204 20);
+  --core-clr-transparent: rgb(0 204 20 / 0%);
+  --main-body-clr: rgb(0 204 20);
+  --main-body-clr-transparent: rgb(0 204 20 / 0%);
+  --contour-active-clr: #f00;
+  --core-active-clr: #f00;
+  --main-body-active-clr: #f00;
+  --gradient-line-1: rgb(0 0 0);
+  --gradient-line-2: rgb(0 0 0 / 0%);
+  --gradient-smeared-1: #007f0c;
+  --gradient-smeared-2: #004306;
 
-  @supports (
-    (text-stroke: 1px $theme-dark-background) or
-      (-webkit-text-stroke: 1px $theme-dark-background)
-  ) {
-    .card__image-text {
-      text-shadow: none;
-      -webkit-text-stroke: 1px $theme-dark-background;
-    }
-  }
-
-  .page {
-    background-image: $gradient-left-to-right-theme-dark,
-      $gradient-top-to-bottom-theme-dark, $gradient-background-theme-dark;
-    font-variation-settings:
-      'wght' $main-font-theme-dark-weight,
-      'wdth' 100,
-      'opsz' 0;
-  }
-
-  .header {
-    border: $border-width solid $theme-dark-accent;
-    background-color: $theme-dark-background;
-  }
-
-  .theme-menu__button:focus-visible {
-    color: $theme-dark-accent-transparent;
-  }
-
-  .theme-menu__button::after {
-    background-color: $theme-dark-accent-transparent;
-  }
-
-  .theme-menu__button:hover {
-    color: $theme-dark-accent-transparent;
-  }
-
-  .theme-menu__button:disabled {
-    color: $theme-dark-accent-transparent;
-  }
-
-  .theme-menu__button:disabled::before {
-    color: $theme-dark-accent-transparent;
-  }
-
-  .card {
-    border: $border-width solid $theme-dark-accent;
-    background-color: $theme-dark-background;
-  }
-
-  .card__header {
-    border: $border-width solid $theme-dark-accent;
-    font-variation-settings:
-      'wght' $main-font-bold-theme-dark-weight,
-      'wdth' 100,
-      'opsz' 0;
-  }
-
-  .card__image-text {
-    color: $theme-dark-accent;
-    text-shadow:
-      1px 0 0 $theme-dark-background,
-      1px 0 0 $theme-dark-background,
-      0 1px 0 $theme-dark-background,
-      0 1px 0 $theme-dark-background,
-      -1px 0 0 $theme-dark-background,
-      -1px 0 0 $theme-dark-background,
-      0 -1px 0 $theme-dark-background,
-      0 -1px 0 $theme-dark-background;
-  }
-
-  .card__image {
-    border: $border-width solid $theme-dark-accent;
-  }
-
-  .card__body {
-    border: $border-width solid $theme-dark-accent;
-  }
-
-  .card__text {
-    font-variation-settings:
-      'wght' $main-font-theme-dark-weight,
-      'wdth' 100,
-      'opsz' 0;
-  }
-
-  .card__icon-button:focus-visible {
-    outline: $border-width solid $theme-dark-accent;
-  }
-
-  .standard-button {
-    border: $border-width solid $theme-dark-accent;
-  }
-
-  .standard-button:focus-visible {
-    box-shadow: 2px 2px 0 2px $theme-dark-accent;
-  }
-
-  .standard-button::before {
-    background-color: $theme-dark-accent;
-  }
-
-  .button__text {
-    color: $theme-dark-accent;
-  }
-
-  .footer {
-    background-color: $theme-dark-background;
-  }
-
-  .footer__button-image {
-    color: $theme-dark-accent;
-  }
-
-  .contour {
-    fill: $contour-theme-dark;
-  }
-
-  .core {
-    fill: $core-theme-dark-transparent;
-  }
-
-  .main-body {
-    fill: $main-body-theme-dark-transparent;
-  }
-
-  .sparks {
-    fill: $sparks-fill-color-transparent;
-  }
-
-  .card__icon-button:hover {
-    .like-icon {
-      .core {
-        fill: $core-theme-dark;
-      }
-
-      .main-body {
-        fill: $main-body-theme-dark;
-      }
-    }
-  }
-
-  .card__icon-button:active {
-    .like-icon {
-      .core {
-        fill: $core-active;
-      }
-
-      .main-body {
-        fill: $main-body-active;
-      }
-    }
-  }
-
-  .dialog {
-    border: $border-width solid $theme-dark-accent;
-    color: $theme-dark-accent;
-    background-color: $theme-dark-background;
-  }
-
-  .dialog__button {
-    background-color: $theme-dark-background;
-  }
+  // gradients dark
+  --gradient-left-to-right: repeating-linear-gradient(
+    to right,
+    var(--gradient-line-2) 0,
+    var(--gradient-line-1) 1px,
+    var(--gradient-line-1) 2px,
+    var(--gradient-line-2) 3px,
+    var(--gradient-line-2) 4px
+  );
+  --gradient-top-to-bottom: repeating-linear-gradient(
+    to bottom,
+    var(--gradient-line-2) 0,
+    var(--gradient-line-1) 1px,
+    var(--gradient-line-1) 2px,
+    var(--gradient-line-2) 3px,
+    var(--gradient-line-2) 4px
+  );
+  --gradient-background: linear-gradient(
+    to bottom,
+    var(--gradient-smeared-1),
+    var(--gradient-smeared-2)
+  );
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    color: $theme-dark-accent;
-    background-color: $theme-dark-background;
+    --main-font-weight: 465;
+    --main-font-bold-weight: 785;
+    --background-clr: #000;
+    --accent-clr: rgb(0 204 20);
+    --accent-clr-transparent: rgb(0 204 20 / 60%);
+    --contour-clr: rgb(0 204 20);
+    --core-clr: rgb(0 204 20);
+    --core-clr-transparent: rgb(0 204 20 / 0%);
+    --main-body-clr: rgb(0 204 20);
+    --main-body-clr-transparent: rgb(0 204 20 / 0%);
+    --btn-text-clr: rgb(0 204 20);
+    --contour-active-clr: #f00;
+    --core-active-clr: #f00;
+    --main-body-active-clr: #f00;
+    --gradient-line-1: rgb(0 0 0);
+    --gradient-line-2: rgb(0 0 0 / 0%);
+    --gradient-smeared-1: #007f0c;
+    --gradient-smeared-2: #004306;
 
-    @supports (
-      (text-stroke: 1px $theme-dark-background) or
-        (-webkit-text-stroke: 1px $theme-dark-background)
-    ) {
-      .card__image-text {
-        text-shadow: none;
-        -webkit-text-stroke: 1px $theme-dark-background;
-      }
-    }
-
-    .page {
-      background-image: $gradient-left-to-right-theme-dark,
-        $gradient-top-to-bottom-theme-dark, $gradient-background-theme-dark;
-      font-variation-settings:
-        'wght' $main-font-theme-dark-weight,
-        'wdth' 100,
-        'opsz' 0;
-    }
-
-    .header {
-      border: $border-width solid $theme-dark-accent;
-      background-color: $theme-dark-background;
-    }
-
-    .theme-menu__button::after {
-      background-color: $theme-dark-accent-transparent;
-    }
-
-    .theme-menu__button:focus-visible {
-      color: $theme-dark-accent-transparent;
-    }
-
-    .theme-menu__button:hover {
-      color: $theme-dark-accent-transparent;
-    }
-
-    .theme-menu__button:disabled {
-      color: $theme-dark-accent-transparent;
-    }
-
-    .theme-menu__button:disabled::before {
-      color: $theme-dark-accent-transparent;
-    }
-
-    .card {
-      border: $border-width solid $theme-dark-accent;
-      background-color: $theme-dark-background;
-    }
-
-    .card__header {
-      border: $border-width solid $theme-dark-accent;
-      font-variation-settings:
-        'wght' $main-font-bold-theme-dark-weight,
-        'wdth' 100,
-        'opsz' 0;
-    }
-
-    .card__image-text {
-      color: $theme-dark-accent;
-      text-shadow:
-        1px 0 0 $theme-dark-background,
-        1px 0 0 $theme-dark-background,
-        0 1px 0 $theme-dark-background,
-        0 1px 0 $theme-dark-background,
-        -1px 0 0 $theme-dark-background,
-        -1px 0 0 $theme-dark-background,
-        0 -1px 0 $theme-dark-background,
-        0 -1px 0 $theme-dark-background;
-    }
-
-    .card__image {
-      border: $border-width solid $theme-dark-accent;
-    }
-
-    .card__body {
-      border: $border-width solid $theme-dark-accent;
-    }
-
-    .card__text {
-      font-variation-settings:
-        'wght' $main-font-theme-dark-weight,
-        'wdth' 100,
-        'opsz' 0;
-    }
-
-    .card__icon-button:focus-visible {
-      outline: $border-width solid $theme-dark-accent;
-    }
-
-    .standard-button {
-      border: $border-width solid $theme-dark-accent;
-    }
-
-    .standard-button:focus-visible {
-      box-shadow: 2px 2px 0 2px $theme-dark-accent;
-    }
-
-    .standard-button::before {
-      background-color: $theme-dark-accent;
-    }
-
-    .button__text {
-      color: $theme-dark-accent;
-    }
-
-    .footer {
-      background-color: $theme-dark-background;
-    }
-
-    .footer__button {
-      border: $border-width solid $theme-dark-accent;
-    }
-
-    .footer__button-image {
-      color: $theme-dark-accent;
-    }
-
-    .contour {
-      fill: $contour-theme-dark;
-    }
-
-    .core {
-      fill: $core-theme-dark-transparent;
-    }
-
-    .main-body {
-      fill: $main-body-theme-dark-transparent;
-    }
-
-    .sparks {
-      fill: $sparks-fill-color-transparent;
-    }
-
-    .card__icon-button:hover {
-      .like-icon {
-        .core {
-          fill: $core-theme-dark;
-        }
-
-        .main-body {
-          fill: $main-body-theme-dark;
-        }
-      }
-    }
-
-    .card__icon-button:active {
-      .like-icon {
-        .core {
-          fill: $core-active;
-        }
-
-        .main-body {
-          fill: $main-body-active;
-        }
-      }
-    }
-
-    .dialog {
-      border: $border-width solid $theme-dark-accent;
-      color: $theme-dark-accent;
-      background-color: $theme-dark-background;
-    }
-
-    .dialog__button {
-      background-color: $theme-dark-background;
-    }
+    // gradients dark
+    --gradient-left-to-right: repeating-linear-gradient(
+      to right,
+      var(--gradient-line-2) 0,
+      var(--gradient-line-1) 1px,
+      var(--gradient-line-1) 2px,
+      var(--gradient-line-2) 3px,
+      var(--gradient-line-2) 4px
+    );
+    --gradient-top-to-bottom: repeating-linear-gradient(
+      to bottom,
+      var(--gradient-line-2) 0,
+      var(--gradient-line-1) 1px,
+      var(--gradient-line-1) 2px,
+      var(--gradient-line-2) 3px,
+      var(--gradient-line-2) 4px
+    );
+    --gradient-background: linear-gradient(
+      to bottom,
+      var(--gradient-smeared-1),
+      var(--gradient-smeared-2)
+    );
   }
 }
